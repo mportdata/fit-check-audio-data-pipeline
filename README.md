@@ -117,3 +117,8 @@ This project is a compact example of turning an AI model into an operational dat
 - Tests around the core pipeline objects
 - A real-world input source with repeated, time-sensitive data
 
+## Engineering Notes
+
+- Beam keeps the feed processing model portable: the same transform structure can run locally during development or on Dataflow for cloud execution.
+- The project separates feed parsing, episode handling, and transcription so each part can be tested independently.
+- Containerisation and Terraform make the runtime and cloud resources explicit, which is the main engineering value of the project beyond the transcription model itself.
